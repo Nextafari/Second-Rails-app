@@ -35,6 +35,11 @@ gem 'jquery-rails', '4.3.1'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+group :production do
+# POSTGRESQL gem to enable heroku function well
+gem 'pg', '0.20.0'
+end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug',  '9.0.6', platform: :mri
