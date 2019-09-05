@@ -13,3 +13,23 @@
  *= require_tree .
  *= require_self
  */
+
+
+
+.home-page,  {
+  color: green;
+  font: bold;
+  font-size: 50px;
+}
+
+.about-page {
+  font-style: italic;
+  font-size: 20px;
+  
+}
+
+.home-page-img {
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+}

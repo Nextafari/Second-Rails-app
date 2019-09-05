@@ -23,7 +23,8 @@ gem 'coffee-rails', '4.2.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '5.0.1'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '2.7.0'
+gem 'jbuilder', '2.9.1'
+gem 'bootsnap',   '1.4.4', require: true
 # Installs JQuerry
 gem 'jquery-rails', '4.3.1'
 # Use Redis adapter to run Action Cable in production
@@ -45,8 +46,14 @@ group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3', '1.3.13'
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
+  gem 'capybara', '3.28.0'
+  gem 'rails-controller-testing', '1.0.4'
+  gem 'minitest', '5.11.3'
+  gem 'minitest-reporters', '1.3.8'
+  gem 'guard', '2.15.0'
+  gem 'guard-minitest', '2.4.6'
+  gem 'selenium-webdriver', '3.142.3'
+  gem 'webdrivers', '4.1.2'
 end
 
 group :development do
