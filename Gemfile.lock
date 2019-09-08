@@ -42,9 +42,14 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     ansi (1.5.0)
     arel (8.0.0)
+    autoprefixer-rails (9.6.1.1)
+      execjs
     bindex (0.8.1)
     bootsnap (1.4.4)
       msgpack (~> 1.0)
+    bootstrap-sass (3.3.6)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     builder (3.2.3)
     byebug (9.0.6)
     capybara (3.28.0)
@@ -223,6 +228,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (= 1.4.4)
+  bootstrap-sass (= 3.3.6)
   byebug (= 9.0.6)
   capybara (= 3.28.0)
   coffee-rails (= 4.2.2)

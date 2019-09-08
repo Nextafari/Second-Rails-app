@@ -8,7 +8,8 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6'
-
+# Thi sintalls the Bootstrap gem that helps with styling the webpages
+gem 'bootstrap-sass', '3.3.6'
 # Use Puma as the app server
 gem 'puma', '3.9.1'
 # Use SCSS for stylesheets
