@@ -3,15 +3,18 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
+  
   # This action shows the page of a user, using the find action and params to retrieve info from the database
   def show
     @user = User.find(params[:id])
   end
+
  # This action is invoked when a post request is made (when the form is submitted) 
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "successful saved"
+      flash[:success] = "Welcome to the app!"
+      redirect_to @user
     else
       render 'new'
     end

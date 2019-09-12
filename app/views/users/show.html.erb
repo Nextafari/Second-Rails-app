@@ -3,7 +3,7 @@
     <section class="user info">
       <h1>
         <%= @user.name %>, <%= @user.email %>
-        <%= gravatar_for @user %>
+        <%= gravatar_for @user, size: 80 %>
       </h1>
     </section>
   </aside>
