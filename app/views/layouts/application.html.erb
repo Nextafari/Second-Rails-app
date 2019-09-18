@@ -7,10 +7,14 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= render 'layouts/shim' %>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=yes">
   </head>
 
-  <body>
+  <body style=".container-fluid{
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 2cm;}">
     <%= render 'layouts/header' %>
       <div class="container">
         <% flash.each do |message_type, message| %>
