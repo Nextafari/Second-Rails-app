@@ -33,6 +33,18 @@
   @include box_sizing;
 }
 
+/* navbar */
+.container-fluid{
+    width: 100%;
+    text-align: right;
+    /*max-width: 800px;
+    margin: 0 auto;
+    padding-top: 2cm;*/
+}
+
+
+
+
 /* Universal */
 
 .home-page-text {
