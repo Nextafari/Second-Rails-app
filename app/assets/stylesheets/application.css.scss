@@ -37,9 +37,6 @@
 .container-fluid{
     width: 100%;
     text-align: right;
-    /*max-width: 800px;
-    margin: 0 auto;
-    padding-top: 2cm;*/
 }
 
 
@@ -203,3 +200,11 @@ aside {
   }
 }
 
+#session_remember_me {
+  margin-left: 2px;
+  padding-left: 1px;
+}
+
+.login-span {
+  margin-left: 20px;
+}
