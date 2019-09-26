@@ -1,15 +1,11 @@
-<% provide(:title, 'Update Profile') %>
-<% provide(:button_text, 'Save changes') %>
-<h1>Update Profile</h1>
+<% provide(:title, 'Edit Profile') %>
+<% provide(:button_text, 'Update profile') %>
+<h1>Edit My Profile</h1>
   <div class="container">
     <div class="row">
-      <div class="col-md-6 col-md-offset-3">  
+      <div class="col-md-6 col-md-offset-3">
         <div class="well sign-up">
           <%= render 'form' %>
-          <div class="gravatar_edit" style="margin-top: 5px;">
-            <%= gravatar_for @user %>
-            <a href="http://gravatar.com/emails" target="_blank" rel="noopener noreferrer">Change</a>
-          </div>
         </div>
       </div>
     </div>
