@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
       remember user
       flash.now[:success] = "Signed in successfully"
-      redirect_to user
+      redirect_back_or user
     else
       # create an error message and show form again.
       flash.now[:danger] = "Something went wrong, please try again"

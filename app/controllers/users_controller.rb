@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :logged_in_user, only: [:edit, :update]
+  before_action :correct_user, onlu [:edit, :update]
   
   # Shows the user a new form to fill up when they make a get request to our sign up page
   def new
@@ -30,10 +32,26 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     # handles a successful update
     if @user.update_attributes(user_params)
+      flash[:success] = "Profile Updated"
       redirect_to user_path
     else
       render 'edit'
     end
+  end
+  
+  # Before filters
+  # confirms a logged in user
+  def logged_in_user
+    unless logged_in?
+      store_location
+      flash[:danger] = "Please log in"
+      redirect_to login_url
+    end
+  end
+  # confirms the correct user
+  def correct_user
+    @user = User.find(params[:id])
+    redirect_to(root_url) unless current_user?(@user) 
   end
   
   private
