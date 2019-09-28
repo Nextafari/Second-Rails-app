@@ -1,6 +1,12 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:edit, :update]
-  before_action :correct_user, onlu [:edit, :update]
+  before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update]
+  before_action :admin_user, only: :destroy
+  
+  # This shows all the user on our database
+  def index
+    @users = User.all.paginate(page: params[:page])
+  end
   
   # Shows the user a new form to fill up when they make a get request to our sign up page
   def new
@@ -39,6 +45,13 @@ class UsersController < ApplicationController
     end
   end
   
+  # Deletes user from the database (for admins only)
+  def destroy
+    User.find(params[:id]).destroy
+    flash[:success] = "User deleted"
+    redirect_to users_path
+  end
+  
   # Before filters
   # confirms a logged in user
   def logged_in_user
@@ -52,6 +65,11 @@ class UsersController < ApplicationController
   def correct_user
     @user = User.find(params[:id])
     redirect_to(root_url) unless current_user?(@user) 
+  end
+  
+  # Confirms the Admin user
+  def admin_user
+    redirect_to(root_path) unless current_user.present? && current_user.admin?
   end
   
   private

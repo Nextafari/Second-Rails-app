@@ -10,6 +10,12 @@ end
 gem 'rails', '~> 5.1.6'
 # Bcrypt is a password hashing gem that will help us secure the user's password on our database
 gem 'bcrypt', '3.1.11'
+# The faker gem is used to create fake users in the database automatically
+gem 'faker', '1.6.3'
+# This gem helps paginate the user index page
+gem 'will_paginate', '3.1.5'
+# This gem will incorporate bootstrap into the paginate gem file
+gem 'bootstrap-will_paginate', '0.0.10'
 # This intalls the Bootstrap gem that helps with styling the webpages
 gem 'bootstrap-sass', '3.3.6'
 # Use Puma as the app server
