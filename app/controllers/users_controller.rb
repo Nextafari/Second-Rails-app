@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   
   # This shows all the user on our database
   def index
-    @users = User.all.paginate(page: params[:page])
+    @users = User.where(activated: true).paginate(page: params[:page])
   end
   
   # Shows the user a new form to fill up when they make a get request to our sign up page
@@ -22,9 +22,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      log_in @user
-      flash[:success] = "Welcome to the app!"
-      redirect_to @user
+      UserMailer.account_activation(@user).deliver_now
+      flash[:info] = "Please check your email to activate your account"
+      redirect_to root_path
     else
       render 'new'
     end
