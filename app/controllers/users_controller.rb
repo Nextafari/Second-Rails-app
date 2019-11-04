@@ -19,7 +19,23 @@ class UsersController < ApplicationController
     redirect_to root_path and return unless @user.activated?
     @microposts = @user.microposts.paginate(page: params[:page])
   end
-
+  
+  # This defines the following action
+  def following
+    @title = "Following"
+    @user = User.find(params[:id])
+    @users = @user.following.paginate(page: params[:page])
+    render 'show_follow'
+  end
+  
+  # This defines the follower(s) action
+  def followers
+    @title = "Followers"
+    @user = User.find(params[:id])
+    @users = @user.followers.paginate(page: params[:page])
+    render 'show_follow'
+  end
+  
  # This action is invoked when a post request is made (when the form is submitted) 
   def create
     @user = User.new(user_params)
