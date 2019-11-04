@@ -41,6 +41,12 @@ class User < ApplicationRecord
     active_relationships.create(followed_id: other_user.id)
   end
   
+  # Returns a user's status feed
+  def feed
+   following_ids = "SELECCT followed_id FROM relationships WHERE follower_id = :user_id"
+   Micropost.where("user_id IN (#{following_ids}) OR user_id = :user_id", user_id: id)
+  end
+  
   #  unfollows a user
   def unfollow(other_user)
     active_relationships.find_by(followed_id: other_user.id).destroy
