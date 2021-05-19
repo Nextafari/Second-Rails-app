@@ -19,7 +19,7 @@ gem 'bootstrap-will_paginate', '0.0.10'
 # This intalls the Bootstrap gem that helps with styling the webpages
 gem 'bootstrap-sass', '3.3.6'
 # Use Puma as the app server
-gem 'puma', '3.9.1'
+gem 'puma', '4.3.8'
 # Use SCSS for stylesheets
 gem 'sass-rails', '5.0.6'
 # Use Uglifier as compressor for JavaScript assets
